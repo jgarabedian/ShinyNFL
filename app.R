@@ -10,12 +10,12 @@ ui <- pageWithSidebar(
   sidebarPanel(
     # Input: Selector for variable to query table ----
     selectInput("season", "Season:", 
-                selected = "2017",
+                selected = 2017,
                 c("2017" = 2017,
                   "2018" = 2018,
                   "2019" = 2019)),
     numericInput("week", "Week Number",
-                 1, min = 1, max = 17, step = .5)
+                 1, min = 1, max = 17, step = 1)
   ),
 
   # Main panel for displaying outputs ----
