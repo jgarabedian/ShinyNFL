@@ -28,6 +28,7 @@ ui <- pageWithSidebar(
 # Define server logic to plot various variables against mpg ----
 server <- function(input, output) {
   output$games <- DT::renderDataTable({
+    library(nflscrapR)
     games <- as.data.frame.table(scrape_game_ids(input$season, weeks = input$week))
     games <- games[which(games$Var2 == 'game_id'),]
   })
